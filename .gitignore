@@ -1,0 +1,13 @@
+# Ignore the Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Ignore local execution logs folder
+logs/
+
+# Ignore operating system specific metadata files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store

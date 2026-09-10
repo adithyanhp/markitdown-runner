@@ -1,0 +1,133 @@
+MarkitDown : Python tool for converting files and office documents to Markdown.
+
+
+Open your Command Prompt (cmd) and run these three commands in order inside your markitdown folder:
+
+
+python -m venv .venv	or py -3.14 -m venv venv    <- for specific python version
+.venv\Scripts\activate
+pip install markitdown[all]
+
+
+What these commands do:
+
+1. python -m venv .venv: Creates a self-contained, isolated environment folder named .venv right inside your current directory.
+
+2. .venv\Scripts\activate: Tells Windows to use this local folder for any Python actions instead of your global system. You will see (.venv) appear at the beginning of your command prompt line.
+
+3. pip install markitdown[all]: Installs the tool and all its packages safely inside that local .venv folder.
+
+
+Whenever you want to use the tool in the future, you just have to open your command prompt to this folder and run .venv\Scripts\activate first. If you ever decide you don't want it anymore, simply close the terminal and delete the main folder—your system will be completely clean.
+
+
+--------------
+
+To use MarkItDown now that it is installed in your isolated folder, you always need to activate the virtual environment first so Windows knows where to find the tool.
+
+
+1. Open and Activate the Folder
+
+1. Open Command Prompt (cmd).
+
+2. Navigate to your folder:
+
+	cd C:\path\to\your\markitdown
+
+
+3. Activate the environment (you will see (.venv) appear at the start of your command line):
+
+	.venv\Scripts\activate
+
+
+2. Convert Your First File
+
+Place the file you want to convert (for example, a file named sample.docx or report.pdf) directly into your markitdown folder, then run:
+
+To save the conversion as a new Markdown file:
+
+	markitdown sample.docx -o output.md
+
+
+(This will generate a brand new output.md text file right inside your folder).
+
+To just preview the markdown text directly on your screen:
+
+		markitdown sample.docx
+
+3. Close it when you are done
+
+When you are finished using the tool, simply type this command to turn off the virtual environment:
+
+	deactivate
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+How to use 
+
+
+
+MarkItDown can handle all of these formats using the exact same basic command syntax: markitdown filename.extension -o output.md.
+
+
+Make sure your virtual environment is activated ((.venv) is showing in your terminal), and use the following commands depending on the file type:
+
+1. Document & Media Files
+
+These formats use the specialized converters installed by the [all] plugin to extract text, layouts, and image metadata:
+
+
+* PDF: markitdown document.pdf -o pdf_output.md
+
+* Word: markitdown document.docx -o word_output.md
+
+* Excel: markitdown sheet.xlsx -o excel_output.md
+
+* PowerPoint: markitdown slides.pptx -o ppt_output.md
+
+* Images: markitdown photo.jpg -o image_output.md (Extracts EXIF data and metadata; requires an external LLM configuration if you want it to describe the image content).
+
+
+
+
+2. Code, Web, & Text Files
+
+
+For web formats and source code files, MarkItDown cleanly extracts the text, strips out structural clutter (like raw HTML tags), and wraps code snippets in appropriate Markdown code blocks:
+
+
+* HTML: markitdown index.html -o html_output.md
+
+* Python: markitdown script.py -o py_output.md
+
+* JavaScript: markitdown app.js -o js_output.md
+
+* CSS: markitdown styles.css -o css_output.md
+
+* React JSX: markitdown Component.jsx -o jsx_output.md
+
+* Django Templates / Files: markitdown views.py -o django_output.md
+
+* Plain Text: markitdown notes.txt -o text_output.md
+
+
+
+----------------------------------------------------------------------------------
+
+Pro Tip: Converting Files in Other Folders
+
+You do not have to copy your files into the markitdown folder to convert them. You can target a file anywhere on your Windows PC by putting its full path in quotation marks:
+
+
+
+*  markitdown "C:\Users\YourName\Documents\project\app.js" -o "C:\Users\YourName\Documents\project\app.md"
+
+
+
+To Update MarkitDown use the below code
+
+cd /d "C:\Users\adith\Documents\MarkitDown"
+call .venv\Scripts\activate
+pip install --upgrade markitdown[all]
